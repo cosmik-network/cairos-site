@@ -32,6 +32,7 @@ const components: MDXComponents = {
       px={"xs"}
       py={5}
       underline="never"
+      target="_blank"
     >
       {children}
     </Anchor>
