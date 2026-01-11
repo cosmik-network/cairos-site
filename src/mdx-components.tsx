@@ -22,21 +22,40 @@ const components: MDXComponents = {
       {children}
     </Text>
   ),
-  a: ({ children, href }) => (
-    <Anchor
-      href={href}
-      fw={500}
-      fz={"lg"}
-      bg={"dark"}
-      c={"white"}
-      px={"xs"}
-      py={5}
-      underline="never"
-      target="_blank"
-    >
-      {children}
-    </Anchor>
-  ),
+  a: ({ children, href }) => {
+    // Links with arrows get button styling
+    const childText = typeof children === 'string' ? children : children?.toString() || '';
+    const hasArrow = childText.includes('→');
+
+    if (hasArrow) {
+      // Button-style link
+      return (
+        <Anchor
+          href={href}
+          fw={500}
+          fz={"lg"}
+          bg={"dark"}
+          c={"white"}
+          px={"xs"}
+          py={5}
+          underline="never"
+          target="_blank"
+        >
+          {children}
+        </Anchor>
+      );
+    }
+
+    // Standard inline link (default)
+    return (
+      <Anchor
+        href={href}
+        target="_blank"
+      >
+        {children}
+      </Anchor>
+    );
+  },
   ul: ({ children }) => <List type="unordered">{children}</List>,
   ol: ({ children }) => <List type="ordered">{children}</List>,
   li: ({ children }) => <ListItem fw={400}>{children}</ListItem>,
