@@ -1,4 +1,4 @@
-import { Stack } from "@mantine/core";
+import { Stack, SimpleGrid, Box, Anchor } from "@mantine/core";
 
 
 <Stack gap={"xl"}>
@@ -66,20 +66,29 @@ We're building a network of projects with shared vision, values and goals:
 - **Building a movement, not just products** - new modes of research require cultural shifts and collective action, beyond new technologies
 </Stack>
 
-<Stack gap={"sm"}>
+<Stack gap={"md"}>
 ### Members
 
-**Discourse Graphs**
-
-[Learn more →](https://discoursegraphs.com/)
-
-**Cosmik Network**
-
-[Learn more →](https://cosmik.network/)
-
-**eLife Pathways**
-
-[Learn more →](https://elifepathways.org/)
+<SimpleGrid cols={{ base: 1, sm: 3 }} spacing="xl" mt="sm">
+  <Stack gap="md" align="flex-start">
+    <Box h={70} style={{ display: 'flex', alignItems: 'center' }}>
+      <img src="/member_images/cosmik_logo-full.svg" alt="Cosmik Network" style={{ maxHeight: '70px', maxWidth: '100%', objectFit: 'contain' }} />
+    </Box>
+    <Anchor href="https://cosmik.network/" fw={500} fz="lg" bg="dark" c="white" px="xs" py={5} style={{ textDecoration: 'none' }} target="_blank">Learn more →</Anchor>
+  </Stack>
+  <Stack gap="md" align="flex-start">
+    <Box h={70} style={{ display: 'flex', alignItems: 'center' }}>
+      <img src="/member_images/Discourse graph logo.svg" alt="Discourse Graphs" style={{ maxHeight: '70px', maxWidth: '100%', objectFit: 'contain' }} />
+    </Box>
+    <Anchor href="https://discoursegraphs.com/" fw={500} fz="lg" bg="dark" c="white" px="xs" py={5} style={{ textDecoration: 'none' }} target="_blank">Learn more →</Anchor>
+  </Stack>
+  <Stack gap="md" align="flex-start">
+    <Box h={70} style={{ display: 'flex', alignItems: 'center' }}>
+      <img src="/member_images/elife-pathways-logo.svg" alt="eLife Pathways" style={{ maxHeight: '70px', maxWidth: '100%', objectFit: 'contain' }} />
+    </Box>
+    <Anchor href="https://elifepathways.org/" fw={500} fz="lg" bg="dark" c="white" px="xs" py={5} style={{ textDecoration: 'none' }} target="_blank">Learn more →</Anchor>
+  </Stack>
+</SimpleGrid>
 </Stack>
 
 
